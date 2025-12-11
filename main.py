@@ -96,8 +96,8 @@ def signup():
         url = request.args.get("url", "")
         return render_template("/signup.html")
     if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
+        email = request.form.get("email", "")
+        password = request.form.get("password")
         dbHandler.insertUser(email, password)
         return render_template("/form.html")
     else:

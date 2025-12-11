@@ -3138,3 +3138,93 @@
 2025-12-11 23:31:00,822 127.0.0.1 - - [11/Dec/2025 23:31:00] "[31m[1mPOST /signup.html HTTP/1.1[0m" 400 -
 2025-12-11 23:31:02,400 The CSRF token is missing.
 2025-12-11 23:31:02,400 127.0.0.1 - - [11/Dec/2025 23:31:02] "[31m[1mPOST /signup.html HTTP/1.1[0m" 400 -
+2025-12-11 23:39:52,906 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.1.13:5000
+2025-12-11 23:39:52,907 [33mPress CTRL+C to quit[0m
+2025-12-11 23:39:52,910  * Restarting with stat
+2025-12-11 23:39:53,660  * Debugger is active!
+2025-12-11 23:39:53,661  * Debugger PIN: 666-002-766
+2025-12-11 23:39:54,002 127.0.0.1 - - [11/Dec/2025 23:39:54] "GET / HTTP/1.1" 200 -
+2025-12-11 23:39:54,402 127.0.0.1 - - [11/Dec/2025 23:39:54] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-11 23:39:54,437 127.0.0.1 - - [11/Dec/2025 23:39:54] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-11 23:39:54,443 127.0.0.1 - - [11/Dec/2025 23:39:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:39:54,671 127.0.0.1 - - [11/Dec/2025 23:39:54] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-11 23:39:54,874 127.0.0.1 - - [11/Dec/2025 23:39:54] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-11 23:39:54,965 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q.github.dev/","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-11 23:39:54,965 127.0.0.1 - - [11/Dec/2025 23:39:54] "POST /csp_report HTTP/1.1" 200 -
+2025-12-11 23:39:55,978 127.0.0.1 - - [11/Dec/2025 23:39:55] "GET /signup.html HTTP/1.1" 200 -
+2025-12-11 23:39:56,034 127.0.0.1 - - [11/Dec/2025 23:39:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:39:56,038 127.0.0.1 - - [11/Dec/2025 23:39:56] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-11 23:39:56,040 127.0.0.1 - - [11/Dec/2025 23:39:56] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-11 23:39:56,076 127.0.0.1 - - [11/Dec/2025 23:39:56] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-11 23:39:56,100 127.0.0.1 - - [11/Dec/2025 23:39:56] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-11 23:40:32,478 The CSRF token is missing.
+2025-12-11 23:40:32,478 127.0.0.1 - - [11/Dec/2025 23:40:32] "[31m[1mPOST /signup.html HTTP/1.1[0m" 400 -
+2025-12-11 23:41:50,039 The CSRF token is missing.
+2025-12-11 23:41:50,040 127.0.0.1 - - [11/Dec/2025 23:41:50] "[31m[1mPOST /signup.html HTTP/1.1[0m" 400 -
+2025-12-11 23:41:53,846 The CSRF token is missing.
+2025-12-11 23:41:53,847 127.0.0.1 - - [11/Dec/2025 23:41:53] "[31m[1mPOST /signup.html HTTP/1.1[0m" 400 -
+2025-12-11 23:41:55,300 127.0.0.1 - - [11/Dec/2025 23:41:55] "GET /signup.html HTTP/1.1" 200 -
+2025-12-11 23:41:55,466 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-11 23:41:55,484 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:41:55,495 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-11 23:41:55,533 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-11 23:41:55,556 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-11 23:41:55,588 127.0.0.1 - - [11/Dec/2025 23:41:55] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-11 23:42:04,164 127.0.0.1 - - [11/Dec/2025 23:42:04] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:42:04,219 127.0.0.1 - - [11/Dec/2025 23:42:04] "GET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-11 23:42:04,222 127.0.0.1 - - [11/Dec/2025 23:42:04] "GET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-11 23:42:04,336 127.0.0.1 - - [11/Dec/2025 23:42:04] "GET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=wFw2TwUYaAguy0KlBR8f HTTP/1.1" 200 -
+2025-12-11 23:42:04,365 127.0.0.1 - - [11/Dec/2025 23:42:04] "GET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-11 23:42:58,306  * Detected change in '/workspaces/2026.SE_Task1_Gerrard.Fong/main.py', reloading
+2025-12-11 23:42:58,351  * Restarting with stat
+2025-12-11 23:42:58,578  * Debugger is active!
+2025-12-11 23:42:58,578  * Debugger PIN: 666-002-766
+2025-12-11 23:43:02,225 127.0.0.1 - - [11/Dec/2025 23:43:02] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:43:02,271 127.0.0.1 - - [11/Dec/2025 23:43:02] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:43:02,271 127.0.0.1 - - [11/Dec/2025 23:43:02] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:43:02,302 127.0.0.1 - - [11/Dec/2025 23:43:02] "GET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=cLQgaCZDLKxGtyh4nQpK HTTP/1.1" 200 -
+2025-12-11 23:43:02,327 127.0.0.1 - - [11/Dec/2025 23:43:02] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-11 23:43:07,858 127.0.0.1 - - [11/Dec/2025 23:43:07] "GET /signup.html HTTP/1.1" 200 -
+2025-12-11 23:43:13,514 127.0.0.1 - - [11/Dec/2025 23:43:13] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:43:13,560 127.0.0.1 - - [11/Dec/2025 23:43:13] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:43:13,563 127.0.0.1 - - [11/Dec/2025 23:43:13] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:43:13,592 127.0.0.1 - - [11/Dec/2025 23:43:13] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=cLQgaCZDLKxGtyh4nQpK HTTP/1.1[0m" 304 -
+2025-12-11 23:43:13,631 127.0.0.1 - - [11/Dec/2025 23:43:13] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-11 23:44:27,838  * To enable the debugger you need to enter the security pin:
+2025-12-11 23:44:27,838  * Debugger pin code: 666-002-766
+2025-12-11 23:44:27,838 127.0.0.1 - - [11/Dec/2025 23:44:27] "GET /signup.html?__debugger__=yes&cmd=printpin&s=cLQgaCZDLKxGtyh4nQpK HTTP/1.1" 200 -
+2025-12-11 23:44:32,065 127.0.0.1 - - [11/Dec/2025 23:44:32] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:44:32,215 127.0.0.1 - - [11/Dec/2025 23:44:32] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:44:32,218 127.0.0.1 - - [11/Dec/2025 23:44:32] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:44:32,246 127.0.0.1 - - [11/Dec/2025 23:44:32] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=cLQgaCZDLKxGtyh4nQpK HTTP/1.1[0m" 304 -
+2025-12-11 23:44:32,273 127.0.0.1 - - [11/Dec/2025 23:44:32] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-11 23:48:11,303  * Detected change in '/workspaces/2026.SE_Task1_Gerrard.Fong/main.py', reloading
+2025-12-11 23:48:11,349  * Restarting with stat
+2025-12-11 23:48:11,587  * Debugger is active!
+2025-12-11 23:48:11,588  * Debugger PIN: 666-002-766
+2025-12-11 23:48:17,486 127.0.0.1 - - [11/Dec/2025 23:48:17] "GET /signup.html HTTP/1.1" 200 -
+2025-12-11 23:48:23,401 127.0.0.1 - - [11/Dec/2025 23:48:23] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:48:23,543 127.0.0.1 - - [11/Dec/2025 23:48:23] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:48:23,553 127.0.0.1 - - [11/Dec/2025 23:48:23] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:48:23,586 127.0.0.1 - - [11/Dec/2025 23:48:23] "GET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=j1YQVTzMwaBR6OY8Fnfi HTTP/1.1" 200 -
+2025-12-11 23:48:23,678 127.0.0.1 - - [11/Dec/2025 23:48:23] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-11 23:48:37,859  * Detected change in '/workspaces/2026.SE_Task1_Gerrard.Fong/main.py', reloading
+2025-12-11 23:48:37,892  * Restarting with stat
+2025-12-11 23:48:38,119  * Debugger is active!
+2025-12-11 23:48:38,119  * Debugger PIN: 666-002-766
+2025-12-11 23:48:38,238 127.0.0.1 - - [11/Dec/2025 23:48:38] "GET /signup.html HTTP/1.1" 200 -
+2025-12-11 23:48:41,420 127.0.0.1 - - [11/Dec/2025 23:48:41] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:48:41,490 127.0.0.1 - - [11/Dec/2025 23:48:41] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:48:41,553 127.0.0.1 - - [11/Dec/2025 23:48:41] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:48:41,590 127.0.0.1 - - [11/Dec/2025 23:48:41] "GET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=jVA2Xw0kfXLoMTOBbsy0 HTTP/1.1" 200 -
+2025-12-11 23:48:41,637 127.0.0.1 - - [11/Dec/2025 23:48:41] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-11 23:50:27,827 127.0.0.1 - - [11/Dec/2025 23:50:27] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-11 23:50:29,261 127.0.0.1 - - [11/Dec/2025 23:50:29] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:50:36,170 127.0.0.1 - - [11/Dec/2025 23:50:36] "[35m[1mPOST /signup.html HTTP/1.1[0m" 500 -
+2025-12-11 23:50:36,232 127.0.0.1 - - [11/Dec/2025 23:50:36] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-11 23:50:36,299 127.0.0.1 - - [11/Dec/2025 23:50:36] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-11 23:50:36,403 127.0.0.1 - - [11/Dec/2025 23:50:36] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png&s=jVA2Xw0kfXLoMTOBbsy0 HTTP/1.1[0m" 304 -
+2025-12-11 23:50:36,495 127.0.0.1 - - [11/Dec/2025 23:50:36] "[36mGET /signup.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
