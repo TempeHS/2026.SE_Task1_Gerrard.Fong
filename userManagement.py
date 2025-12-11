@@ -11,11 +11,9 @@ def getUsers():
     return cur
 
 
-def insertUser(email, hashed_password):
+def insertUser(email, password):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
-    cur.execute(
-        "INSERT INTO users (email, password) VALUES (?,?)", (email, hashed_password)
-    )
+    cur.execute("INSERT INTO users (email, password) VALUES (?,?)", (email, password))
     con.close()
     return cur

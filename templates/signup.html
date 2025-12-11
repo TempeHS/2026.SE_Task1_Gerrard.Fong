@@ -1,8 +1,40 @@
 {% extends 'layout.html' %} {% block content %}
 
 <div class="container">
-  <div class="row">
-    <h1 class="display-1">Signup</h1>
+  <h1 class="display-1 mb-5">Signup</h1>
+    <form action="/signup.html" method="POST">
+    <hr class="w-100">
+      <div>
+        <h2><label class="text mb-2" for="new_email">Email</label></h2>
+          <required>
+            <input class="w-50 py-2 mb-4" id="new_email" pattern="[a-zA-z0-9]+@[a-z]+\.[a-z]+$" 
+              title="This field requires an @ and valid domain" placeholder="janedoe@example.com">
+          </required>
+      </div>
+          <h2><label class="text mb-2" for="password">Password</label></h2>
+          <div>
+            <required>
+              <input class="w-50 py-2" type="password" id="password"
+                placeholder="dogWhistle_123" pattern="(?=.*[a-z])(?=.*[A-z])(?=.*[_-*!$?]).{6,30}" 
+                title=
+                "
+                Minimum = 6
+                Maximum = 30 
+                Must have 1 Capital letter
+                Must have 1 Special character
+                ">
+            </required>
+              <div>
+                <input type="checkbox" class="form-check-input" id="show_password">
+                <label type="form-check-label" for="show_password">Show Password</label>
+              <br>
+            <button class="btn btn-dark w-20 my-4" role="submit">Submit</button>
+              </form>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

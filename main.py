@@ -7,6 +7,7 @@ import requests
 from flask_wtf import CSRFProtect
 from flask_csp.csp import csp_header
 import logging
+import bcrypt
 
 import userManagement as dbHandler
 
@@ -94,8 +95,13 @@ def signup():
     if request.method == "GET":
         url = request.args.get("url", "")
         return render_template("/signup.html")
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        dbHandler.insertUser(email, password)
+        return render_template("/form.html")
     else:
-        return render_template("/index.html")
+        return render_template("/signup.html")
 
 
 @app.route("/index.html")
