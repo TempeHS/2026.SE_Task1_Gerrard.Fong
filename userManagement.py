@@ -15,5 +15,5 @@ def insertUser(email, password):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
     cur.execute("INSERT INTO users (email, password) VALUES (?,?)", (email, password))
+    con.commit()
     con.close()
-    return cur
