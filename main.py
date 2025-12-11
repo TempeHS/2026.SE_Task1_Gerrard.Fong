@@ -70,6 +70,9 @@ def privacy():
 # example CSRF protected form
 @app.route("/form.html", methods=["POST", "GET"])
 def form():
+    if request.method == "GET" and request.args.get("url"):
+        url = request.args.get("url", "")
+        return redirect(url, code=200)
     if request.method == "POST":
         email = request.form["email"]
         text = request.form["text"]
