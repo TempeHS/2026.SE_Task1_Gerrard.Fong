@@ -98,7 +98,7 @@ def signup():
         email = request.form.get("email", "").strip()
         password = request.form.get("password", "")
         dbHandler.insertUser(email, password)
-        return render_template("/form.html")
+        return redirect("/form.html")
     else:
         return render_template("/signup.html")
 
@@ -110,9 +110,14 @@ def login():
         password = request.form.get("password", "").strip()
         user_id = dbHandler.loginUser(email, password)
         if user_id:
-            return render_template("/form.html")
+            return redirect("/form.html")
         else:
             return render_template("/index.html", error="Invalid Credentials")
+
+
+@app.route("/admin.html", methods=["POST", "GET"])
+def verifyUser():
+    pass
 
 
 if __name__ == "__main__":

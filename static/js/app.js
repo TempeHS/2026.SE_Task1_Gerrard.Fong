@@ -23,3 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Used Co-Pilot to generate functionality for Show Password checkbox
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.getElementById("show_password");
+  const passwordField = document.getElementById("password");
+
+  if (checkbox && passwordField) {
+    checkbox.addEventListener("change", function () {
+      passwordField.type = this.checked ? "text" : "password";
+    });
+  }
+});

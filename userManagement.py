@@ -6,7 +6,8 @@ import bcrypt
 def getUsers():
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
-    cur.execute("SELECT * FROM id7-tusers")
+    cur.execute("SELECT email, password FROM users")
+    users = cur.fetchall()
     con.close()
     return cur
 
@@ -14,6 +15,11 @@ def getUsers():
 def insertUser(email, password):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
+    cur.execute("SELECT email FROM users WHERE email = ?", (email,))
+    user = cur.fetchone()
+    if user:
+        con.close()
+        return False, "Email already registered"
     hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
     cur.execute(
         "INSERT INTO users (email, password) VALUES (?,?)", (email, hashed_password)
