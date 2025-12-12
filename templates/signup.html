@@ -11,7 +11,7 @@
           class="container alert alert-danger bg-gradient shadow text-center mt-5"
           role="alert"
         >
-          <b> Passwords do not match. </b>
+          <b> {{error}} </b>
           <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
       {% endif %}
@@ -42,7 +42,7 @@
               <button class="btn btn-dark w-20 my-4" type="submit">Register</button>
 
               <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
-              <div class="text">Already have an account? <a class="text" href="/index.html"><u>Login here</u></a></div>
+              <div class="text">Already registered with DevLogs? <a class="text" href="/index.html"><u>Login here</u></a></div>
                 </form>
               </div>  
             </div>

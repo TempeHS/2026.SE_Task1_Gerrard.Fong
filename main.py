@@ -99,8 +99,14 @@ def signup():
         password = request.form.get("password", "")
         confirm_password = request.form.get("confirm_password", "").strip()
         if confirm_password == password:
-            dbHandler.insertUser(email, password)
-            return redirect("/form.html")
+            try:
+                success, fail = dbHandler.insertUser(email, password)
+                if success:
+                    return redirect("/form.html")
+                else:
+                    return render_template("/signup.html", error="Email already exists")
+            except Exception as e:
+                return render_template("/signup.html", error="fail")
         else:
             return render_template("/signup.html", error="Passwords do not match")
     else:

@@ -4992,3 +4992,189 @@
 2025-12-12 10:24:18,065 127.0.0.1 - - [12/Dec/2025 10:24:18] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
 2025-12-12 10:24:18,118 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/signup.html","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
 2025-12-12 10:24:18,118 127.0.0.1 - - [12/Dec/2025 10:24:18] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 10:25:18,130 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.3.134:5000
+2025-12-12 10:25:18,131 [33mPress CTRL+C to quit[0m
+2025-12-12 10:25:18,131  * Restarting with stat
+2025-12-12 10:25:18,352  * Debugger is active!
+2025-12-12 10:25:18,353  * Debugger PIN: 903-613-722
+2025-12-12 10:25:18,504 127.0.0.1 - - [12/Dec/2025 10:25:18] "GET / HTTP/1.1" 200 -
+2025-12-12 10:25:18,566 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,567 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,567 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,676 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,773 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,810 127.0.0.1 - - [12/Dec/2025 10:25:18] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-12 10:25:18,837 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q.github.dev/","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 10:25:18,837 127.0.0.1 - - [12/Dec/2025 10:25:18] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 10:25:19,905 127.0.0.1 - - [12/Dec/2025 10:25:19] "GET /signup.html HTTP/1.1" 200 -
+2025-12-12 10:25:19,967 127.0.0.1 - - [12/Dec/2025 10:25:19] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:19,970 127.0.0.1 - - [12/Dec/2025 10:25:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:19,972 127.0.0.1 - - [12/Dec/2025 10:25:19] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:20,011 127.0.0.1 - - [12/Dec/2025 10:25:20] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:20,044 127.0.0.1 - - [12/Dec/2025 10:25:20] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,342 127.0.0.1 - - [12/Dec/2025 10:25:44] "GET /signup.html HTTP/1.1" 200 -
+2025-12-12 10:25:44,389 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,392 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,395 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,427 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,456 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:44,488 127.0.0.1 - - [12/Dec/2025 10:25:44] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-12 10:25:49,886 127.0.0.1 - - [12/Dec/2025 10:25:49] "GET / HTTP/1.1" 200 -
+2025-12-12 10:25:49,944 127.0.0.1 - - [12/Dec/2025 10:25:49] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:49,947 127.0.0.1 - - [12/Dec/2025 10:25:49] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:49,950 127.0.0.1 - - [12/Dec/2025 10:25:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:49,987 127.0.0.1 - - [12/Dec/2025 10:25:49] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:50,014 127.0.0.1 - - [12/Dec/2025 10:25:50] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:50,070 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/signup.html","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 10:25:50,070 127.0.0.1 - - [12/Dec/2025 10:25:50] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 10:25:59,633 127.0.0.1 - - [12/Dec/2025 10:25:59] "[32mPOST /index.html HTTP/1.1[0m" 302 -
+2025-12-12 10:25:59,667 127.0.0.1 - - [12/Dec/2025 10:25:59] "GET /form.html HTTP/1.1" 200 -
+2025-12-12 10:25:59,725 127.0.0.1 - - [12/Dec/2025 10:25:59] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:59,727 127.0.0.1 - - [12/Dec/2025 10:25:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:25:59,730 127.0.0.1 - - [12/Dec/2025 10:25:59] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:59,769 127.0.0.1 - - [12/Dec/2025 10:25:59] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:25:59,797 127.0.0.1 - - [12/Dec/2025 10:25:59] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,104 127.0.0.1 - - [12/Dec/2025 10:26:14] "GET / HTTP/1.1" 200 -
+2025-12-12 10:26:14,153 127.0.0.1 - - [12/Dec/2025 10:26:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,159 127.0.0.1 - - [12/Dec/2025 10:26:14] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,161 127.0.0.1 - - [12/Dec/2025 10:26:14] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,192 127.0.0.1 - - [12/Dec/2025 10:26:14] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,218 127.0.0.1 - - [12/Dec/2025 10:26:14] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:14,276 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/form.html","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 10:26:14,276 127.0.0.1 - - [12/Dec/2025 10:26:14] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 10:26:18,609 127.0.0.1 - - [12/Dec/2025 10:26:18] "POST /index.html HTTP/1.1" 200 -
+2025-12-12 10:26:18,659 127.0.0.1 - - [12/Dec/2025 10:26:18] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:18,662 127.0.0.1 - - [12/Dec/2025 10:26:18] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:18,664 127.0.0.1 - - [12/Dec/2025 10:26:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:18,711 127.0.0.1 - - [12/Dec/2025 10:26:18] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:18,746 127.0.0.1 - - [12/Dec/2025 10:26:18] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:24,287 127.0.0.1 - - [12/Dec/2025 10:26:24] "[35m[1mPOST /index.html HTTP/1.1[0m" 500 -
+2025-12-12 10:26:24,329 127.0.0.1 - - [12/Dec/2025 10:26:24] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:24,331 127.0.0.1 - - [12/Dec/2025 10:26:24] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:24,358 127.0.0.1 - - [12/Dec/2025 10:26:24] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=8O7rSU4tZvqmQWJnNWlS HTTP/1.1" 200 -
+2025-12-12 10:26:24,390 127.0.0.1 - - [12/Dec/2025 10:26:24] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-12 10:26:31,015 127.0.0.1 - - [12/Dec/2025 10:26:31] "[35m[1mPOST /index.html HTTP/1.1[0m" 500 -
+2025-12-12 10:26:31,056 127.0.0.1 - - [12/Dec/2025 10:26:31] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:31,059 127.0.0.1 - - [12/Dec/2025 10:26:31] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:31,087 127.0.0.1 - - [12/Dec/2025 10:26:31] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=8O7rSU4tZvqmQWJnNWlS HTTP/1.1[0m" 304 -
+2025-12-12 10:26:31,118 127.0.0.1 - - [12/Dec/2025 10:26:31] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-12 10:26:40,826 127.0.0.1 - - [12/Dec/2025 10:26:40] "GET /signup.html HTTP/1.1" 200 -
+2025-12-12 10:26:40,873 127.0.0.1 - - [12/Dec/2025 10:26:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:40,876 127.0.0.1 - - [12/Dec/2025 10:26:40] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:40,879 127.0.0.1 - - [12/Dec/2025 10:26:40] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:40,916 127.0.0.1 - - [12/Dec/2025 10:26:40] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:40,946 127.0.0.1 - - [12/Dec/2025 10:26:40] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:43,312 127.0.0.1 - - [12/Dec/2025 10:26:43] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 10:26:43,358 127.0.0.1 - - [12/Dec/2025 10:26:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:43,360 127.0.0.1 - - [12/Dec/2025 10:26:43] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:43,362 127.0.0.1 - - [12/Dec/2025 10:26:43] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:43,407 127.0.0.1 - - [12/Dec/2025 10:26:43] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:43,431 127.0.0.1 - - [12/Dec/2025 10:26:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:45,513 127.0.0.1 - - [12/Dec/2025 10:26:45] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 10:26:45,558 127.0.0.1 - - [12/Dec/2025 10:26:45] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:45,561 127.0.0.1 - - [12/Dec/2025 10:26:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:45,564 127.0.0.1 - - [12/Dec/2025 10:26:45] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:45,594 127.0.0.1 - - [12/Dec/2025 10:26:45] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:45,621 127.0.0.1 - - [12/Dec/2025 10:26:45] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:49,569 127.0.0.1 - - [12/Dec/2025 10:26:49] "[32mPOST /signup.html HTTP/1.1[0m" 302 -
+2025-12-12 10:26:49,597 127.0.0.1 - - [12/Dec/2025 10:26:49] "GET /form.html HTTP/1.1" 200 -
+2025-12-12 10:26:49,655 127.0.0.1 - - [12/Dec/2025 10:26:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:49,659 127.0.0.1 - - [12/Dec/2025 10:26:49] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:49,662 127.0.0.1 - - [12/Dec/2025 10:26:49] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:49,698 127.0.0.1 - - [12/Dec/2025 10:26:49] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:49,726 127.0.0.1 - - [12/Dec/2025 10:26:49] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,242 127.0.0.1 - - [12/Dec/2025 10:26:59] "GET / HTTP/1.1" 200 -
+2025-12-12 10:26:59,294 127.0.0.1 - - [12/Dec/2025 10:26:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,296 127.0.0.1 - - [12/Dec/2025 10:26:59] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,299 127.0.0.1 - - [12/Dec/2025 10:26:59] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,331 127.0.0.1 - - [12/Dec/2025 10:26:59] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,364 127.0.0.1 - - [12/Dec/2025 10:26:59] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:26:59,458 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/form.html","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 10:26:59,458 127.0.0.1 - - [12/Dec/2025 10:26:59] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 10:27:00,960 127.0.0.1 - - [12/Dec/2025 10:27:00] "GET /signup.html HTTP/1.1" 200 -
+2025-12-12 10:27:01,008 127.0.0.1 - - [12/Dec/2025 10:27:01] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:01,011 127.0.0.1 - - [12/Dec/2025 10:27:01] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:01,013 127.0.0.1 - - [12/Dec/2025 10:27:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:01,052 127.0.0.1 - - [12/Dec/2025 10:27:01] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:01,084 127.0.0.1 - - [12/Dec/2025 10:27:01] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:06,603 127.0.0.1 - - [12/Dec/2025 10:27:06] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 10:27:06,670 127.0.0.1 - - [12/Dec/2025 10:27:06] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:06,672 127.0.0.1 - - [12/Dec/2025 10:27:06] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:06,675 127.0.0.1 - - [12/Dec/2025 10:27:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:06,721 127.0.0.1 - - [12/Dec/2025 10:27:06] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:06,760 127.0.0.1 - - [12/Dec/2025 10:27:06] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:12,156 127.0.0.1 - - [12/Dec/2025 10:27:12] "[32mPOST /signup.html HTTP/1.1[0m" 302 -
+2025-12-12 10:27:12,188 127.0.0.1 - - [12/Dec/2025 10:27:12] "GET /form.html HTTP/1.1" 200 -
+2025-12-12 10:27:12,236 127.0.0.1 - - [12/Dec/2025 10:27:12] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:12,240 127.0.0.1 - - [12/Dec/2025 10:27:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 10:27:12,241 127.0.0.1 - - [12/Dec/2025 10:27:12] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:12,282 127.0.0.1 - - [12/Dec/2025 10:27:12] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 10:27:12,308 127.0.0.1 - - [12/Dec/2025 10:27:12] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:11:25,859  * Detected change in '/workspaces/2026.SE_Task1_Gerrard.Fong/main.py', reloading
+2025-12-12 11:11:25,899  * Restarting with stat
+2025-12-12 11:13:42,315 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.3.134:5000
+2025-12-12 11:13:42,315 [33mPress CTRL+C to quit[0m
+2025-12-12 11:13:42,316  * Restarting with stat
+2025-12-12 11:13:42,540  * Debugger is active!
+2025-12-12 11:13:42,540  * Debugger PIN: 903-613-722
+2025-12-12 11:13:43,224 127.0.0.1 - - [12/Dec/2025 11:13:43] "GET / HTTP/1.1" 200 -
+2025-12-12 11:13:43,423 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,447 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,466 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,608 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,708 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,740 127.0.0.1 - - [12/Dec/2025 11:13:43] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-12 11:13:43,790 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q.github.dev/","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 11:13:43,790 127.0.0.1 - - [12/Dec/2025 11:13:43] "POST /csp_report HTTP/1.1" 200 -
+2025-12-12 11:13:45,242 127.0.0.1 - - [12/Dec/2025 11:13:45] "GET /signup.html HTTP/1.1" 200 -
+2025-12-12 11:13:45,302 127.0.0.1 - - [12/Dec/2025 11:13:45] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:45,306 127.0.0.1 - - [12/Dec/2025 11:13:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:45,308 127.0.0.1 - - [12/Dec/2025 11:13:45] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:45,355 127.0.0.1 - - [12/Dec/2025 11:13:45] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:45,387 127.0.0.1 - - [12/Dec/2025 11:13:45] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:49,106 127.0.0.1 - - [12/Dec/2025 11:13:49] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 11:13:49,156 127.0.0.1 - - [12/Dec/2025 11:13:49] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:49,160 127.0.0.1 - - [12/Dec/2025 11:13:49] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:49,165 127.0.0.1 - - [12/Dec/2025 11:13:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:49,208 127.0.0.1 - - [12/Dec/2025 11:13:49] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:49,238 127.0.0.1 - - [12/Dec/2025 11:13:49] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:53,030 127.0.0.1 - - [12/Dec/2025 11:13:53] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 11:13:53,087 127.0.0.1 - - [12/Dec/2025 11:13:53] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:53,091 127.0.0.1 - - [12/Dec/2025 11:13:53] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:53,096 127.0.0.1 - - [12/Dec/2025 11:13:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:13:53,139 127.0.0.1 - - [12/Dec/2025 11:13:53] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:13:53,169 127.0.0.1 - - [12/Dec/2025 11:13:53] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,496 127.0.0.1 - - [12/Dec/2025 11:15:21] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 11:15:21,558 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,665 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,670 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,711 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,832 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:21,866 127.0.0.1 - - [12/Dec/2025 11:15:21] "[36mGET /static/images/favicon.png HTTP/1.1[0m" 304 -
+2025-12-12 11:15:28,036 127.0.0.1 - - [12/Dec/2025 11:15:28] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 11:15:28,083 127.0.0.1 - - [12/Dec/2025 11:15:28] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:28,086 127.0.0.1 - - [12/Dec/2025 11:15:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:28,088 127.0.0.1 - - [12/Dec/2025 11:15:28] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:28,122 127.0.0.1 - - [12/Dec/2025 11:15:28] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:28,152 127.0.0.1 - - [12/Dec/2025 11:15:28] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:53,295 127.0.0.1 - - [12/Dec/2025 11:15:53] "POST /signup.html HTTP/1.1" 200 -
+2025-12-12 11:15:53,343 127.0.0.1 - - [12/Dec/2025 11:15:53] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:53,347 127.0.0.1 - - [12/Dec/2025 11:15:53] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:53,349 127.0.0.1 - - [12/Dec/2025 11:15:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:53,383 127.0.0.1 - - [12/Dec/2025 11:15:53] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:53,413 127.0.0.1 - - [12/Dec/2025 11:15:53] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,320 127.0.0.1 - - [12/Dec/2025 11:15:57] "[32mGET /index.html HTTP/1.1[0m" 302 -
+2025-12-12 11:15:57,363 127.0.0.1 - - [12/Dec/2025 11:15:57] "GET / HTTP/1.1" 200 -
+2025-12-12 11:15:57,410 127.0.0.1 - - [12/Dec/2025 11:15:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,413 127.0.0.1 - - [12/Dec/2025 11:15:57] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,423 127.0.0.1 - - [12/Dec/2025 11:15:57] "[36mGET /static/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,455 127.0.0.1 - - [12/Dec/2025 11:15:57] "[36mGET /static/js/serviceWorker.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,487 127.0.0.1 - - [12/Dec/2025 11:15:57] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-12-12 11:15:57,547 {"csp-report":{"document-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/","referrer":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/signup.html","violated-directive":"manifest-src","effective-directive":"manifest-src","original-policy":"script-src 'self'; img-src 'self' data:; child-src 'self'; default-src 'self'; style-src 'self'; media-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; report-uri /csp_report; font-src 'self'; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; frame-src 'none'","disposition":"enforce","blocked-uri":"https://sturdy-space-system-5grp7p464vgvc7r5q-5000.app.github.dev/static/manifest.json","status-code":200,"script-sample":""}}
+2025-12-12 11:15:57,548 127.0.0.1 - - [12/Dec/2025 11:15:57] "POST /csp_report HTTP/1.1" 200 -
