@@ -26,12 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Used Co-Pilot to generate functionality for Show Password checkbox
 document.addEventListener("DOMContentLoaded", function () {
-  const checkbox = document.getElementById("show_password");
+  const showPasswordCheckbox = document.getElementById("show_password");
   const passwordField = document.getElementById("password");
+  const confirmPasswordField = document.getElementById("confirm_password");
 
-  if (checkbox && passwordField) {
-    checkbox.addEventListener("change", function () {
-      passwordField.type = this.checked ? "text" : "password";
+  if (showPasswordCheckbox && passwordField && confirmPasswordField) {
+    showPasswordCheckbox.addEventListener("change", function () {
+      const type = this.checked ? "text" : "password";
+      passwordField.type = type;
+      confirmPasswordField.type = type;
     });
   }
 });

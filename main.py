@@ -97,8 +97,12 @@ def signup():
     if request.method == "POST":
         email = request.form.get("email", "").strip()
         password = request.form.get("password", "")
-        dbHandler.insertUser(email, password)
-        return redirect("/form.html")
+        confirm_password = request.form.get("confirm_password", "").strip()
+        if confirm_password == password:
+            dbHandler.insertUser(email, password)
+            return redirect("/form.html")
+        else:
+            return render_template("/signup.html", error="Passwords do not match")
     else:
         return render_template("/signup.html")
 

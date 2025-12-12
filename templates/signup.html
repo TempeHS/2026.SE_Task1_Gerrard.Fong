@@ -1,42 +1,55 @@
 {% extends 'layout.html' %} {% block content %}
 
 <div class="container">
-  <h1 class="display-1 mb-5">Signup</h1>
-    <form action="/signup.html" method="POST">
-    <hr class="w-100">
-      <div>
-        <h2><label class="text mb-2" for="email">Email</label></h2>
-          <required>
-            <input class="w-50 py-2 mb-4" id="email" name="email" pattern="[a-zA-z0-9]+@[a-z]+\.[a-z]+$" 
-              title="This field requires an @ and valid domain" placeholder="janedoe@example.com">
-          </required>
-      </div>
-          <h2><label class="text mb-2" for="password">Password</label></h2>
-          <div>
+  <div class="row justify-content-center">
+    <div class="col-md-8 my-3"></div>
+    <h1 class="display-3 mb-4"><b>Signup to DevLogs</b></h1>
+      <form action="/signup.html" method="POST">
+      <hr class="w-100">
+      {% if error%}
+        <div
+          class="container alert alert-danger bg-gradient shadow text-center mt-5"
+          role="alert"
+        >
+          <b> Passwords do not match. </b>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endif %}
+        <div>
+          <h2><label class="form-group mb-2" for="email">Email</label></h2>
             <required>
-              <input class="w-50 py-2" type="password" id="password" name="password"
-                placeholder="dogWhistle_123" pattern="(?=.*[a-z])(?=.*[A-z])(?=.*[_-*!$?]).{6,30}" 
-                title=
-                "
-                Minimum = 6
-                Maximum = 30 
-                Must have 1 Capital letter
-                Must have 1 Special character
-                ">
+              <input class="w-100 py-2" id="email" name="email" pattern="[a-zA-z0-9]+@[a-z]+\.[a-z]+$" placeholder="janedoe@example.com">
+            <small class="text"> This field requires an @ and valid domain </small>
             </required>
+              </div>
+              <h2><label class="text mt-4 mb-2" for="password">Password</label></h2>
               <div>
-                <input type="checkbox" class="form-check-input" id="show_password">
-                <label class="form-check-label" for="show_password" >Show Password</label>
-              <br>
-            <button class="btn btn-dark w-20 my-4" type="submit">Submit</button>
-            <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
-              </form>
-            </div>  
+                <required>
+                  <input class="w-100 py-2" type="password" id="password" name="password"
+                    placeholder="Password123!" pattern="(?=.*[a-z])(?=.*[A-z])(?=.*[_-*!$?]).{6,30}">
+                  <small class="text">
+                    6-30 characters, Minimum 1 Capital letter, Minimum 1 Special character
+                  </small>
+                </required>
+                <required> 
+                <h2><label class="text mb-2 mt-4" for="confirm_password">Confirm Password</label></h2>
+                    <input class="w-100 py-2" type="password" placeholder=" Re-enter password" id="confirm_password" name="confirm_password" >
+                </required>
+                    <div>
+                      <input type="checkbox" class="form-check-input" id="show_password">
+                      <label class="form-check-label" for="show_password" >Show Password</label>
+                    <br>
+              <button class="btn btn-dark w-20 my-4" type="submit">Register</button>
+
+              <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+              <div class="text">Already have an account? <a class="text" href="/index.html"><u>Login here</u></a></div>
+                </form>
+              </div>  
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}
