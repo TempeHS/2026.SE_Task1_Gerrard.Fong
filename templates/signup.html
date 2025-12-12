@@ -5,16 +5,16 @@
     <form action="/signup.html" method="POST">
     <hr class="w-100">
       <div>
-        <h2><label class="text mb-2" for="new_email">Email</label></h2>
+        <h2><label class="text mb-2" for="email">Email</label></h2>
           <required>
-            <input class="w-50 py-2 mb-4" id="new_email" pattern="[a-zA-z0-9]+@[a-z]+\.[a-z]+$" 
+            <input class="w-50 py-2 mb-4" id="email" name="email" pattern="[a-zA-z0-9]+@[a-z]+\.[a-z]+$" 
               title="This field requires an @ and valid domain" placeholder="janedoe@example.com">
           </required>
       </div>
           <h2><label class="text mb-2" for="password">Password</label></h2>
           <div>
             <required>
-              <input class="w-50 py-2" type="password" id="password"
+              <input class="w-50 py-2" type="password" id="password" name="password"
                 placeholder="dogWhistle_123" pattern="(?=.*[a-z])(?=.*[A-z])(?=.*[_-*!$?]).{6,30}" 
                 title=
                 "

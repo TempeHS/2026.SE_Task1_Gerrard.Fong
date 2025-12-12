@@ -93,20 +93,26 @@ def csp_report():
 @app.route("/signup.html", methods=["GET", "POST"])
 def signup():
     if request.method == "GET":
-        url = request.args.get("url", "")
         return render_template("/signup.html")
     if request.method == "POST":
-        email = request.form.get("email", "")
-        password = request.form.get("password")
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "")
         dbHandler.insertUser(email, password)
         return render_template("/form.html")
     else:
         return render_template("/signup.html")
 
 
-@app.route("/index.html")
-def home():
-    return render_template("/index.html")
+@app.route("/index.html", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "").strip()
+        user_id = dbHandler.loginUser(email, password)
+        if user_id:
+            return render_template("/form.html")
+        else:
+            return render_template("/index.html", error="Invalid Credentials")
 
 
 if __name__ == "__main__":

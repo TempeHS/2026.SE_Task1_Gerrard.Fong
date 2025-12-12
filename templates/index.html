@@ -6,52 +6,54 @@
     </div>
   </div>
 </div>
-
-          <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8 text center my-3">
-              <form>
-                <div class="form-group mb-5">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    placeholder="ethanzheng@gmail.com"
-                    aria-describedby="emailHelp"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                  />
-                </div>
-                <div class="form-group form-check mb-3">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Check me out</label
-                  >
-                </div>
-                <a class="btn btn-primary mb-3" href="/signup.html" role="button">Signup</a>
-                  <div>
-                    <a class="btn btn-primary mb-3" href="/form.html" role="button">Forum</a>
-                  </div>
-                <button type="submit" class="btn btn-primary mb-5">
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
+{%if error%}
+<div class="container alert bg-danger shadow text-end" role="alert">
+  <b> Invalid Credentials</b
+  ><button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text center my-3">
+      <form method="POST" action="/index.html">
+        <div class="form-group mb-5">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            placeholder="ethanzheng@gmail.com"
+            aria-describedby="emailHelp"
+          />
         </div>
-        {% endblock %}
-      </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            name="password"
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="form-group form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <a class="btn btn-primary mb-3" href="/signup.html" role="button"
+          >Signup</a
+        >
+        <div>
+          <a class="btn btn-primary mb-3" href="/form.html" role="button"
+            >Forum</a
+          >
+        </div>
+        <button role="submit" class="btn btn-primary mb-5">Submit</button>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      </form>
     </div>
   </div>
 </div>
+{% endblock %}
