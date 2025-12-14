@@ -1,13 +1,14 @@
 from flask import Flask
 from flask import redirect
 from flask import render_template
-from flask import request
+from flask import request, session
 from flask import jsonify
 import requests
 from flask_wtf import CSRFProtect
 from flask_csp.csp import csp_header
 import logging
 import bcrypt
+
 
 import userManagement as dbHandler
 
