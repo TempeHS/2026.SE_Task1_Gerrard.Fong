@@ -71,13 +71,30 @@ def privacy():
 
 # example CSRF protected form
 @app.route("/form.html", methods=["POST", "GET"])
-def form():
+def addLog():
     if request.method == "GET" and request.args.get("url"):
         url = request.args.get("url", "")
         return redirect(url, code=200)
     if request.method == "POST":
-        email = request.form["email"]
-        text = request.form["text"]
+        user_id = request.form.get("user_id", "").strip()
+        developer = request.form.get("developer", "").strip()
+        start_time = request.form.get("start_time", "").strip()
+        end_time = request.form.get("end_time", "").strip()
+        time_worked = request.form.get("time_worked", "").strip()
+        descriptions = request.form.get("descriptions", "").strip()
+        status = request.form.get("status", "").strip()
+
+        if status == "Hidden":
+            dbHandler.insertLog(
+                user_id,
+                developer,
+                start_time,
+                end_time,
+                time_worked,
+                descriptions,
+                status,
+            )
+
         return render_template("/form.html")
     else:
         return render_template("/form.html")

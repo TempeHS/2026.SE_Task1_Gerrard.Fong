@@ -47,3 +47,52 @@ def loginUser(email, password):
         user_result = cur.fetchone()
         con.close()
         return user_result[0]
+
+
+def insertLog(
+    user_id, developer, start_time, end_time, time_worked, descriptions, status
+):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute(
+        "INSERT INTO logs (user_id, developer, start_time, end_time, time_worked, descriptions, status) VALUES (?,?,?,?,?,?,?)",
+        (user_id, developer, start_time, end_time, time_worked, descriptions, status),
+    )
+    con.commit()
+    con.close()
+
+
+def editLog(log_id, developer, start_time, end_time, time_worked, descriptions, status):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute(
+        "UPDATE logs SET developer=?, start_time=?, end_time=?,time_worked=?, descriptions=?, status=? WHERE id=?",
+        (developer, start_time, end_time, time_worked, descriptions, status, log_id),
+    )
+    con.commit()
+    con.close()
+
+
+def removeLog(log_id):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute("DELETE FROM logs WHERE id=?", (log_id,))
+    con.commit()
+    con.close()
+
+
+def viewLogs():
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    logs = cur.execute("SELECT * FROM logs")
+    results = logs.fetchall()
+    con.close()
+    return results
+
+
+def sortTime():
+    pass
+
+
+def sortDeveloper():
+    pass

@@ -1,29 +1,55 @@
 {% extends 'layout.html' %} {% block content %}
 <div class="container">
-  <div class="row">
+  <div class="row my-3">
     <h1>Welcome back!</h1>
-    {%user%}
+    <hr />
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <form action="/form.html" method="POST" class="box">
+    <form action="/form.html" method="POST">
       <div class="col-auto">
-        <label name="exampleFormControlInput1" class="form-label"
-          >Email address</label
-        >
-        <input
-          name="email"
-          type="email"
-          class="form-control"
-          id="exampleFormControlInput1"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
-          placeholder="name@example.com"
-        />
+        <label name="CreateLog" class="form-label mb-3">Developer</label>
       </div>
+      <input class="form-control w-100 mb-3" />
+      <div>
+        <label for="StartTime" class="mb-2">What time did you start log?</label>
+        <div>
+          <input
+            type="datetime-local"
+            name="StartTime"
+            id="StartTime"
+            class="form-control mb-4"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="EndTime" class="form-label mb-2"
+          >What time did you finish log?</label
+        >
+        <div>
+          <input
+            type="datetime-local"
+            class="form-control mb-4"
+            id="EndTime"
+            name="EndTime"
+          />
+        </div>
+      </div>
+
+      <label for="TimeSpent" class="form-label mb-2">Time spent working</label>
+        <div>
+          <input
+            class="form-control mb-4"
+            id="TimeSpent"
+            name="TimeSpent"
+          />
+        </div>
+      </div>
+
       <div class="col-auto">
         <label for="exampleFormControlTextarea1" class="form-label"
-          >Example text area</label
+          >Description</label
         >
         <textarea
           class="form-control"
