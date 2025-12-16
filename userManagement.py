@@ -85,7 +85,7 @@ def changeLog(
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
     cur.execute(
-        "UPDATE logs SET developer=?, start_time=?, end_time=?, time_worked=?, descriptions=?, status=? WHERE id=? AND user_id?",
+        "UPDATE logs SET developer=?, start_time=?, end_time=?, time_worked=?, descriptions=?, status=? WHERE id=? AND user_id=?",
         (
             developer,
             start_time,
@@ -105,7 +105,9 @@ def viewLogs(user_id=None):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
     if user_id:
-        log = cur.execute("SELECT * FROM logs WHERE user_id=? ORDER BY id DESC", (user_id,))
+        log = cur.execute(
+            "SELECT * FROM logs WHERE user_id=? ORDER BY id DESC", (user_id,)
+        )
     else:
         log = cur.execute("SELECT * FROM logs WHERE status!='Hidden' ORDER BY id DESC")
 

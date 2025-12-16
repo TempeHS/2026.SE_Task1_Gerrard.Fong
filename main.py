@@ -119,10 +119,13 @@ def viewLogs():
 
 @app.route("/changelogs.html", methods=["POST", "GET"])
 def changeLogs():
+    user_id = session.get("user_id")
+    if not user_id:
+        return render_template("/index.html", error="Invalid Session")
+
+    personal_logs = dbHandler.viewLogs(user_id)
+
     if request.method == "POST":
-        user_id = session.get("user_id")
-        if not user_id:
-            return render_template("/index.html", error="Invalid Session")
 
         developer = request.form.get("developer", "").strip()
         start_time = request.form.get("start_time", "").strip()
@@ -134,17 +137,23 @@ def changeLogs():
 
         if "delete_log" in request.form:
             if not log_id:
-                return render_template("/changelogs.html", error="Log ID is required")
+                return render_template(
+                    "/changelogs.html",
+                    personal_logs=personal_logs,
+                    error="Log ID is required",
+                )
 
             dbHandler.removeLog(log_id, user_id)
-            return redirect("/viewlogs.html")
+            return redirect("/changelogs.html")
 
         if "update_log" in request.form:
             if not all(
                 [developer, start_time, end_time, time_worked, descriptions, log_id]
             ):
                 return render_template(
-                    "/changelogs.html", error="Some fields are missing"
+                    "/changelogs.html",
+                    personal_logs=personal_logs,
+                    error="Some fields are missing",
                 )
 
             dbHandler.changeLog(
@@ -158,8 +167,6 @@ def changeLogs():
                 user_id,
             )
         return redirect("/viewlogs.html")
-
-    return render_template("/changelogs.html")
 
 
 # Endpoint for logging CSP violations
