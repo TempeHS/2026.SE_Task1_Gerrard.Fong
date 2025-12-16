@@ -39,6 +39,9 @@ def loginUser(email, password):
     user = cur.fetchone()
     con.close()
 
+    if user is None:
+        return None
+
     hashed_password = user[0]
     if bcrypt.checkpw(password.encode("utf-8"), hashed_password):
         con = sql.connect("databaseFiles/database.db")
@@ -62,30 +65,51 @@ def insertLog(
     con.close()
 
 
-def editLog(log_id, developer, start_time, end_time, time_worked, descriptions, status):
+def removeLog(log_id, user_id):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
     cur.execute(
-        "UPDATE logs SET developer=?, start_time=?, end_time=?,time_worked=?, descriptions=?, status=? WHERE id=?",
-        (developer, start_time, end_time, time_worked, descriptions, status, log_id),
+        "DELETE FROM logs WHERE id=? AND user_id=?",
+        (
+            log_id,
+            user_id,
+        ),
     )
     con.commit()
     con.close()
 
 
-def removeLog(log_id):
+def changeLog(
+    developer, start_time, end_time, time_worked, descriptions, status, log_id, user_id
+):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
-    cur.execute("DELETE FROM logs WHERE id=?", (log_id,))
+    cur.execute(
+        "UPDATE logs SET developer=?, start_time=?, end_time=?, time_worked=?, descriptions=?, status=? WHERE id=? AND user_id?",
+        (
+            developer,
+            start_time,
+            end_time,
+            time_worked,
+            descriptions,
+            status,
+            log_id,
+            user_id,
+        ),
+    )
     con.commit()
     con.close()
 
 
-def viewLogs():
+def viewLogs(user_id=None):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
-    logs = cur.execute("SELECT * FROM logs")
-    results = logs.fetchall()
+    if user_id:
+        log = cur.execute("SELECT * FROM logs WHERE user_id=? ORDER BY id DESC", (user_id,))
+    else:
+        log = cur.execute("SELECT * FROM logs WHERE status!='Hidden' ORDER BY id DESC")
+
+    results = log.fetchall()
     con.close()
     return results
 

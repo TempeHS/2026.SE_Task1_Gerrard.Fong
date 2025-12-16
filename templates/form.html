@@ -2,22 +2,38 @@
 <div class="container">
   <div class="row my-3">
     <h1>Welcome back!</h1>
-    <hr />
+    <br>
+    <small class="text-muted mb-4">You are currently in Add Logs</small>
+    <hr>
+    <a class="btn btn-dark" href="/viewlogs.html">View Logs</a>
+    <a class="btn btn-dark my-2" href="/form.html">Add Logs</a>
+    <a class="btn btn-dark" href="changelogs.html">Change Logs</a>
   </div>
 </div>
+{%if error%}
+<div
+  class="container alert alert-danger bg-gradient shadow text-center"
+  role="alert"
+>
+  <b> {{ error }}</b>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
 <div class="container">
+  <hr>
   <div class="row">
     <form action="/form.html" method="POST">
       <div class="col-auto">
-        <label name="CreateLog" class="form-label mb-3">Developer</label>
+        <input type="hidden" name="user_id" value="{{ session.user_id }}">
+        <label name="developer" class="form-label mb-2">Developer name</label>
       </div>
-      <input class="form-control w-100 mb-3" />
+      <input class="form-control w-100 mb-2" name="developer"/>
       <div>
         <label for="StartTime" class="mb-2">What time did you start log?</label>
         <div>
           <input
             type="datetime-local"
-            name="StartTime"
+            name="start_time"
             id="StartTime"
             class="form-control mb-4"
           />
@@ -32,7 +48,7 @@
             type="datetime-local"
             class="form-control mb-4"
             id="EndTime"
-            name="EndTime"
+            name="end_time"
           />
         </div>
       </div>
@@ -42,25 +58,36 @@
           <input
             class="form-control mb-4"
             id="TimeSpent"
-            name="TimeSpent"
+            name="time_worked"
+            placeholder="e.g. 3 hours"
           />
         </div>
       </div>
 
       <div class="col-auto">
-        <label for="exampleFormControlTextarea1" class="form-label"
+        <label for="description" class="form-label"
           >Description</label
         >
         <textarea
-          class="form-control"
-          name="text"
-          id="exampleFormControlTextarea1"
+          class="form-control mb-2"
+          id="description"
+          name="descriptions"
           rows="3"
         ></textarea>
       </div>
-      <br />
-      <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+
+      <div class="mb-3">
+      <label for="logstatus" class="form-label mb-2">Status</label>
+      <select class="form-select" name="status" id="logstatus" required>
+        <option value="" selected disabled>Select Status</option>
+        <option value="Public">Public</option>
+        <option value="Hidden">Hidden</option>
+        <option value="Public">WIP</option>
+      </select>
+      <div class="form-text">If status is "Hidden", entry won't be shown on All Logs</div>
+</div>
+        <div class="col-auto">
+        <button role="submit" class="btn btn-dark mb-3 mt-2">Submit</button>
       </div>
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     </form>

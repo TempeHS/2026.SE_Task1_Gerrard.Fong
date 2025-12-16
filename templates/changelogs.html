@@ -1,0 +1,85 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container">
+  <div class="row my-3">
+    <h1>Change logs</h1>
+    <hr>
+    <a class="btn btn-dark" href="/viewlogs.html">View Logs</a>
+    <a class="btn btn-dark my-2" href="/form.html">Add Logs</a>
+    <a class="btn btn-dark" href="changelogs.html">Change Logs</a>
+  </div>
+</div>
+  {%if error%}
+  <div
+    class="container alert alert-danger bg-gradient shadow text-center"
+    role="alert">
+    <b> {{ error }}</b>
+  </div>
+  <div></div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  {% endif %}
+
+<div class="container"></div>
+  <hr>
+  <div class="row"></div>
+    <form action="/changelogs.html" method="POST">
+      <div class="col-auto"></div>
+        <label for="log_id" class="form-label mb-2">What log do you want to change</label>
+        <input input id="log_id" name="log_id" class="form-control w-100 mb-2" required>
+        <label class="form-label mb-2">Developer name</label>
+        <input name="developer" class="form-control w-100 mb-2" />
+      <div>
+        <label for="StartTime" class="mb-2">What time did you start log?</label>
+      <div>
+          <input
+            type="datetime-local"
+            name="start_time"
+            id="StartTime"
+            class="form-control mb-4"
+          />
+      <div>
+        <label for="EndTime" class="form-label mb-2"
+          >What time did you finish log?</label>
+      <div>
+          <input
+            type="datetime-local"
+            class="form-control mb-4"
+            id="EndTime"
+            name="end_time"
+          />
+
+      <div>
+        <label for="TimeSpent" class="form-label mb-2">Time spent working</label>
+        <input
+          class="form-control mb-4"
+          id="TimeSpent"
+          name="time_worked"
+          placeholder="e.g. 3 hours"
+        />
+      </div>
+
+      <div class="col-auto">
+        <label for="description" class="form-label"
+          >Description</label
+        >
+        <input
+          class="form-control mb-2"
+          name="descriptions"
+          id="description"
+        ></input>
+      </div>
+
+      <div>
+      <label for="logstatus" class="mb-2">Status</label> 
+      <input class="form-control" name="status" id="logstatus">
+      <small class="text-muted">Status is either Hidden or Public</small>
+      </div>
+
+      <br/>
+      <button type="submit" class="btn btn-danger mt-3" name="delete_log" id="delete_form">Delete</button>
+      <button type="submit" class="btn btn-primary mt-3" name="update_log">Update</button>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    </form>
+  </div>
+</div>
+{% endblock %}
