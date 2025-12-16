@@ -111,11 +111,15 @@
         ></textarea>
       </div>
 
-      <div>
-      <label for="logstatus" class="mb-2">Status</label> 
-      <input class="form-control" name="status" id="logstatus">
-      <small class="text-muted">Status is either Hidden or Public</small>
-      </div>
+      <div class="mb-3">
+      <label for="logstatus" class="form-label mb-2">Status</label>
+      <select class="form-select" name="status" id="logstatus">
+        <option value="" selected disabled>Select Status</option>
+        <option value="Public">Public</option>
+        <option value="Hidden">Hidden</option>
+        <option value="Public">WIP</option>
+      </select>
+      <div class="form-text">If status is "Hidden", entry won't be shown on All Logs</div>
 
       <br/>
       <button type="submit" class="btn btn-danger mt-3" name="delete_log" id="delete_form">Delete</button>

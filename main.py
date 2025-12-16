@@ -168,6 +168,8 @@ def changeLogs():
             )
         return redirect("/viewlogs.html")
 
+    return render_template("/changelogs.html", personal_logs=personal_logs)
+
 
 # Endpoint for logging CSP violations
 @app.route("/csp_report", methods=["POST"])
