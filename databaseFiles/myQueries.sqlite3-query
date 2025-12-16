@@ -12,14 +12,15 @@
 --     password TEXT NOT NULL
 -- );
 
-CREATE TABLE IF NOT EXISTS logs(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL,
-    developer TEXT NOT NULL,
-    start_time DATETIME NOT NULL,
-    end_time DATETIME NOT NULL,
-    time_worked TEXT NOT NULL,
-    descriptions TEXT NOT NULL,
-    status TEXT
-);
+-- CREATE TABLE IF NOT EXISTS logs(
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     user_id INTEGER NOT NULL,
+--     developer TEXT NOT NULL,
+--     start_time DATETIME NOT NULL,
+--     end_time DATETIME NOT NULL,
+--     time_worked TEXT NOT NULL,
+--     descriptions TEXT NOT NULL,
+--     status TEXT
+-- );
 
+ALTER TABLE users ADD COLUMN two_fa_secret TEXT DEFAULT NULL;

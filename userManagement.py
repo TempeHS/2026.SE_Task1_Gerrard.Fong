@@ -30,6 +30,7 @@ def insertUser(email, password):
     )
     con.commit()
     con.close()
+    return True
 
 
 def loginUser(email, password):
@@ -122,3 +123,38 @@ def sortTime():
 
 def sortDeveloper():
     pass
+
+
+def save_2fa_secret(user_id, secret):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute("UPDATE users SET two_fa_secret = ? WHERE id = ?", (secret, user_id))
+    con.commit()
+    con.close()
+
+
+def get_2fa_secret(email):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute("SELECT two_fa_secret FROM users WHERE email = ?", (email,))
+    result = cur.fetchone()
+    con.close()
+    return result[0] if result else None
+
+
+def has_2fa_enabled(user_id):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute("SELECT two_fa_secret FROM users WHERE id = ?", (user_id,))
+    result = cur.fetchone()
+    con.close()
+    return result[0] is not None if result else False
+
+
+def getUserIdByEmail(email):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    cur.execute("SELECT id FROM users WHERE email = ?", (email,))
+    result = cur.fetchone()
+    con.close()
+    return result[0] if result else None

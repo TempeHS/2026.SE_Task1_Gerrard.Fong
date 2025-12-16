@@ -1,15 +1,17 @@
 from flask import Flask
 from flask import redirect
 from flask import render_template
-from flask import request, session
+from flask import request, session, url_for
 from flask import jsonify
 import requests
 from flask_wtf import CSRFProtect
 from flask_csp.csp import csp_header
+import pyotp
+import pyqrcode
+import base64
+import os
 import logging
 import bcrypt
-
-
 import userManagement as dbHandler
 
 # Code snippet for logging a message
@@ -27,6 +29,71 @@ logging.basicConfig(
 app = Flask(__name__)
 app.secret_key = b"_53oi3uriq9pifpff;apl"
 csrf = CSRFProtect(app)
+
+
+@app.route("/enable_2fa", methods=["GET", "POST"])
+def enable_2fa():
+    user_id = session.get("user_id")
+    if not user_id:
+        return redirect("/index.html")
+
+    if request.method == "POST":
+        otp_input = request.form.get("otp", "").strip()
+        user_secret = session.get("user_secret")
+
+        if not user_secret:
+            return render_template("/enable_2fa.html", error="Session expired")
+
+        totp = pyotp.TOTP(user_secret)
+        if totp.verify(otp_input):
+            # Save secret to database
+            dbHandler.save_2fa_secret(user_id, user_secret)
+            session.pop("user_secret", None)
+            return render_template(
+                "/enable_2fa.html", success="2FA enabled successfully"
+            )
+        else:
+            return render_template("/enable_2fa.html", error="Invalid OTP code")
+
+    # Generate QR code for first time
+    user_secret = pyotp.random_base32()
+    session["user_secret"] = user_secret
+
+    email = session.get("email", "user@example.com")
+    totp = pyotp.TOTP(user_secret)
+    otp_uri = totp.provisioning_uri(name=email, issuer_name="DevLogs")
+
+    qr_code = pyqrcode.create(otp_uri)
+    stream = BytesIO()
+    qr_code.png(stream, scale=5)
+    qr_code_b64 = base64.b64encode(stream.getvalue()).decode("utf-8")
+
+    return render_template("/enable_2fa.html", qr_code=qr_code_b64, secret=user_secret)
+
+
+@app.route("/verify_2fa", methods=["GET", "POST"])
+def verify_2fa():
+    email = session.get("temp_email")
+    if not email:
+        return redirect("/index.html")
+
+    if request.method == "POST":
+        otp_input = request.form.get("otp", "").strip()
+        user_secret = dbHandler.get_2fa_secret(email)
+
+        if not user_secret:
+            return render_template("/verify_2fa.html", error="2FA not enabled")
+
+        totp = pyotp.TOTP(user_secret)
+        if totp.verify(otp_input):
+            user_id = dbHandler.getUserIdByEmail(email)
+            session["user_id"] = user_id
+            session.pop("temp_email", None)
+            return redirect("/form.html")
+        else:
+            return render_template("/verify_2fa.html", error="Invalid OTP code")
+
+    return render_template("/verify_2fa.html")
 
 
 # Redirect index.html to domain root for consistent UX
@@ -64,121 +131,6 @@ def index():
     return render_template("/index.html")
 
 
-@app.route("/privacy.html", methods=["GET"])
-def privacy():
-    return render_template("/privacy.html")
-
-
-# example CSRF protected form
-@app.route("/form.html", methods=["POST", "GET"])
-def addLog():
-    if request.method == "GET" and request.args.get("url"):
-        url = request.args.get("url", "")
-        return redirect(url, code=200)
-    if request.method == "POST":
-
-        user_id = session.get("user_id")
-        if not user_id:
-            return render_template("/index.html", error="Invalid Session")
-
-        developer = request.form.get("developer", "").strip()
-        start_time = request.form.get("start_time", "").strip()
-        end_time = request.form.get("end_time", "").strip()
-        time_worked = request.form.get("time_worked", "").strip()
-        descriptions = request.form.get("descriptions", "").strip()
-        status = request.form.get("status", "").strip()
-
-        if not all([developer, start_time, end_time, time_worked, descriptions]):
-            return render_template("/form.html", error="Some fields are missing")
-
-        dbHandler.insertLog(
-            user_id,
-            developer,
-            start_time,
-            end_time,
-            time_worked,
-            descriptions,
-            status,
-        )
-
-        return redirect("/viewlogs.html")
-
-    else:
-        return render_template("/form.html")
-
-
-@app.route("/viewlogs.html")
-def viewLogs():
-    logs = dbHandler.viewLogs(None)
-    user_id = session.get("user_id")
-    if not user_id:
-        return render_template("/index.html", error="Invalid Session")
-    personal_logs = dbHandler.viewLogs(user_id)
-    return render_template("/viewlogs.html", logs=logs, personal_logs=personal_logs)
-
-
-@app.route("/changelogs.html", methods=["POST", "GET"])
-def changeLogs():
-    user_id = session.get("user_id")
-    if not user_id:
-        return render_template("/index.html", error="Invalid Session")
-
-    personal_logs = dbHandler.viewLogs(user_id)
-
-    if request.method == "POST":
-
-        developer = request.form.get("developer", "").strip()
-        start_time = request.form.get("start_time", "").strip()
-        end_time = request.form.get("end_time", "").strip()
-        time_worked = request.form.get("time_worked", "").strip()
-        descriptions = request.form.get("descriptions", "").strip()
-        status = request.form.get("status", "").strip()
-        log_id = request.form.get("log_id", "").strip()
-
-        if "delete_log" in request.form:
-            if not log_id:
-                return render_template(
-                    "/changelogs.html",
-                    personal_logs=personal_logs,
-                    error="Log ID is required",
-                )
-
-            dbHandler.removeLog(log_id, user_id)
-            return redirect("/changelogs.html")
-
-        if "update_log" in request.form:
-            if not all(
-                [developer, start_time, end_time, time_worked, descriptions, log_id]
-            ):
-                return render_template(
-                    "/changelogs.html",
-                    personal_logs=personal_logs,
-                    error="Some fields are missing",
-                )
-
-            dbHandler.changeLog(
-                developer,
-                start_time,
-                end_time,
-                time_worked,
-                descriptions,
-                status,
-                log_id,
-                user_id,
-            )
-        return redirect("/viewlogs.html")
-
-    return render_template("/changelogs.html", personal_logs=personal_logs)
-
-
-# Endpoint for logging CSP violations
-@app.route("/csp_report", methods=["POST"])
-@csrf.exempt
-def csp_report():
-    app.logger.critical(request.data.decode())
-    return "done"
-
-
 @app.route("/signup.html", methods=["GET", "POST"])
 def signup():
     if request.method == "GET":
@@ -211,21 +163,136 @@ def login():
         password = request.form.get("password", "").strip()
         user_id = dbHandler.loginUser(email, password)
         if user_id:
+            if dbHandler.has_2fa_enabled(user_id):
+                session["temp_email"] = email
+                return redirect("/verify_2fa")
+
             session["user_id"] = user_id
             return redirect("/form.html")
         else:
             return render_template("/index.html", error="Invalid Credentials")
 
 
+# example CSRF protected form
+@app.route("/form.html", methods=["POST", "GET"])
+def addLog():
+    if request.method == "GET" and request.args.get("url"):
+        url = request.args.get("url", "")
+        return redirect(url, code=200)
+    if request.method == "POST":
+
+        user_id = session.get("user_id")
+        if not user_id:
+            return render_template("/index.html", error="Invalid Session")
+
+        developer = request.form.get("developer", "").strip()
+        start_time = request.form.get("start_time", "").strip()
+        end_time = request.form.get("end_time", "").strip()
+        time_worked = request.form.get("time_worked", "").strip()
+        descriptions = request.form.get("descriptions", "").strip()
+        status = request.form.get("status", "").strip()
+
+        if not all([developer, start_time, end_time, time_worked, descriptions]):
+            return render_template(
+                "/form.html", error="Some fields are missing", login=True
+            )
+
+        dbHandler.insertLog(
+            user_id,
+            developer,
+            start_time,
+            end_time,
+            time_worked,
+            descriptions,
+            status,
+        )
+
+        return redirect("/viewlogs.html")
+
+    else:
+        return render_template("/form.html", login=True)
+
+
+@app.route("/viewlogs.html")
+def viewLogs():
+    logs = dbHandler.viewLogs(None)
+    user_id = session.get("user_id")
+    if not user_id:
+        return render_template("/index.html", error="Invalid Session")
+    personal_logs = dbHandler.viewLogs(user_id)
+    return render_template(
+        "/viewlogs.html", logs=logs, personal_logs=personal_logs, login=True
+    )
+
+
+@app.route("/changelogs.html", methods=["POST", "GET"])
+def changeLogs():
+    user_id = session.get("user_id")
+    if not user_id:
+        return render_template("/index.html", error="Invalid Session")
+
+    personal_logs = dbHandler.viewLogs(user_id)
+
+    if request.method == "POST":
+
+        developer = request.form.get("developer", "").strip()
+        start_time = request.form.get("start_time", "").strip()
+        end_time = request.form.get("end_time", "").strip()
+        time_worked = request.form.get("time_worked", "").strip()
+        descriptions = request.form.get("descriptions", "").strip()
+        status = request.form.get("status", "").strip()
+        log_id = request.form.get("log_id", "").strip()
+
+        if "delete_log" in request.form:
+            if not log_id:
+                return render_template(
+                    "/changelogs.html",
+                    personal_logs=personal_logs,
+                    error="Log ID is required",
+                    login=True,
+                )
+
+            dbHandler.removeLog(log_id, user_id)
+            return redirect("/changelogs.html")
+
+        if "update_log" in request.form:
+            if not all(
+                [developer, start_time, end_time, time_worked, descriptions, log_id]
+            ):
+                return render_template(
+                    "/changelogs.html",
+                    personal_logs=personal_logs,
+                    error="Some fields are missing",
+                    login=True,
+                )
+
+            dbHandler.changeLog(
+                developer,
+                start_time,
+                end_time,
+                time_worked,
+                descriptions,
+                status,
+                log_id,
+                user_id,
+            )
+        return redirect("/viewlogs.html")
+
+    return render_template("/changelogs.html", personal_logs=personal_logs, login=True)
+
+
+# Endpoint for logging CSP violations
+@app.route("/csp_report", methods=["POST"])
+@csrf.exempt
+def csp_report():
+    app.logger.critical(request.data.decode())
+    return "done"
+
+
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/index.html")
-
-
-@app.route("/admin.html", methods=["POST", "GET"])
-def verifyUser():
-    pass
 
 
 if __name__ == "__main__":

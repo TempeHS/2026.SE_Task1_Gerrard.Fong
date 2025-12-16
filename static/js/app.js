@@ -26,15 +26,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Used Co-Pilot to generate functionality for Show Password checkbox
 document.addEventListener("DOMContentLoaded", function () {
-  const showPasswordCheckbox = document.getElementById("show_password");
-  const passwordField = document.getElementById("password");
-  const confirmPasswordField = document.getElementById("confirm_password");
+  console.log("Password toggle v2 initializing...");
 
-  if (showPasswordCheckbox && passwordField && confirmPasswordField) {
-    showPasswordCheckbox.addEventListener("change", function () {
-      const type = this.checked ? "text" : "password";
-      passwordField.type = type;
-      confirmPasswordField.type = type;
+  const checkboxes = document.querySelectorAll(".show-password-toggle");
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      const showPassword = this.checked;
+      console.log(`Show password: ${showPassword}`);
+
+      // ALWAYS search by ID and name, never by current type
+      const passwordFieldIds = [
+        "password",
+        "confirm_password",
+        "exampleInputPassword1",
+      ];
+      const passwordFieldNames = ["password", "confirm_password"];
+
+      let fieldsToToggle = [];
+
+      // Get by ID
+      passwordFieldIds.forEach((id) => {
+        const field = document.getElementById(id);
+        if (field) fieldsToToggle.push(field);
+      });
+
+      // Get by name
+      passwordFieldNames.forEach((name) => {
+        document.querySelectorAll(`[name="${name}"]`).forEach((field) => {
+          if (!fieldsToToggle.includes(field)) fieldsToToggle.push(field);
+        });
+      });
+
+      console.log(`Found ${fieldsToToggle.length} field(s) to toggle`);
+
+      // Toggle all found fields
+      fieldsToToggle.forEach((field) => {
+        const newType = showPassword ? "text" : "password";
+        console.log(
+          `Changing ${field.id || field.name} from ${field.type} to ${newType}`
+        );
+        field.type = newType;
+      });
     });
-  }
+  });
 });
