@@ -117,12 +117,24 @@ def viewLogs(user_id=None):
     return results
 
 
-def sortTime():
-    pass
+def sortTime(time, sort):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    query = f"SELECT * FROM logs WHERE status!='Hidden' ORDER BY {time} {sort}"
+    logs = cur.execute(query)
+    results = logs.fetchall()
+    con.close()
+    return results
 
 
-def sortDeveloper():
-    pass
+def sortDeveloper(sort):
+    con = sql.connect("databaseFiles/database.db")
+    cur = con.cursor()
+    query = f"SELECT * FROM logs WHERE status!='Hidden' ORDER BY developer {sort}"
+    logs = cur.execute(query)
+    results = logs.fetchall()
+    con.close()
+    return results
 
 
 def save_2fa_secret(user_id, secret):

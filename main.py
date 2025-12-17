@@ -213,13 +213,35 @@ def addLog():
         return render_template("/form.html", login=True)
 
 
-@app.route("/viewlogs.html")
+@app.route("/viewlogs.html", methods=["GET", "POST"])
 def viewLogs():
     logs = dbHandler.viewLogs(None)
     user_id = session.get("user_id")
     if not user_id:
         return render_template("/index.html", error="Invalid Session")
     personal_logs = dbHandler.viewLogs(user_id)
+    if request.method == "POST":
+
+        if "sort_start_time" in request.form:
+            logs = dbHandler.sortTime("start_time", "DESC")
+            personal_logs = dbHandler.sortTime("start_time", "DESC")
+
+        elif "sort_end_time" in request.form:
+            logs = dbHandler.sortTime("end_time", "DESC")
+            personal_logs = dbHandler.sortTime("end_time", "DESC")
+
+        elif "sort_time_worked" in request.form:
+            logs = dbHandler.sortTime("time_worked", "DESC")
+            personal_logs = dbHandler.sortTime("time_worked", "DESC")
+
+        elif "sort_developer" in request.form:
+            logs = dbHandler.sortDeveloper("DESC")
+            personal_logs = dbHandler.sortDeveloper("DESC")
+
+    else:
+        logs = dbHandler.viewLogs(None)
+        personal_logs = dbHandler.viewLogs(user_id)
+
     return render_template(
         "/viewlogs.html", logs=logs, personal_logs=personal_logs, login=True
     )
